@@ -14,32 +14,28 @@
     <section>
         <div class="card">
             <div class="img-card"></div>
-              <h6>Laptop Gamer AMD</h6>
-              <p>Precio base: $<span class="precio-inicial"></span> </p>
-        
-              <p>Cantidad:
-                <span class="cantidad">0</span>
-                <button onclick="
-                    let span = document.querySelector('.cantidad');
-                    let valor = document.querySelector('.valor-total')
-                    let cantidad = Number(span.innerHTML);
-                    cantidad = cantidad + 1;
-                    span.innerHTML = cantidad;
-                    precio = cantidad * 400000;
-                    valor.innerHTML = precio;
-                " 
-                >+</button>
-                <button onclick="
-                    let span = document.querySelector('.cantidad')
-                    let valor = document.querySelector('.valor-total')
-                    let cantidadResta = Number(span.innerHTML);
-                    cantidadResta = cantidadResta - 1;
-                    span.innerHTML = cantidadResta;
-                    precio = cantidadResta * 400000
-                    valor.innerHTML = precio;
-                "
-                >-</button>
-              </p>
+                <h6>Laptop Gamer AMD</h6>
+                <p>Precio base: $<span class="precio-inicial"></span> </p>
+            
+                <p>Cantidad:
+                    <span class="cantidad">0</span>
+                    <button onclick="
+                        cantidad = cantidad + 1;
+                        span.innerHTML = cantidad;
+                        precio = cantidad * 400000;
+                        valor.innerHTML = precio.toLocaleString();
+                    " 
+                    >+</button>
+                    <button onclick="
+                        if (cantidad > 0) {                            
+                            cantidad = cantidad - 1;
+                            span.innerHTML = cantidad;
+                            precio = cantidad * 400000;
+                            valor.innerHTML = precio.toLocaleString();
+                        }
+                    "
+                    >-</button>
+                </p>
             </div>
 
         </div>
